@@ -13,7 +13,7 @@ app.use(cors());
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
         // Specify the directory where uploaded videos will be stored
-        cb(null, path.join(__dirname, 'uploads', 'videos'));
+        cb(null, path.join(__dirname, 'opt', 'render', 'project', 'src', 'uploads', 'videos'));
     },
     filename: function (req, file, cb) {
         // Generate a unique file name for the uploaded video
