@@ -63,7 +63,7 @@ app.post('/upload-video', (req, res) => {
 
 // Route to serve a list of all video file names in the /uploads/videos/ directory
 app.get('/all-videos', (req, res) => {
-    const videosDirectory = path.join(__dirname, 'uploads/videos');
+    const videosDirectory = path.join(__dirname, '/opt/render/project/src/opt/render/project/src/uploads/videos');
 
     // Read the contents of the videos directory
     fs.readdir(videosDirectory, (err, files) => {
@@ -105,7 +105,7 @@ app.get('/all-videos', (req, res) => {
 // Route to serve all video files in the /uploads/videos/ directory
 app.get('/uploads/videos/:videoFileName', (req, res) => {
     const videoFileName = req.params.videoFileName;
-    const videoPath = path.join(__dirname, 'uploads/videos', videoFileName);
+    const videoPath = path.join(__dirname, '/opt/render/project/src/opt/render/project/src/uploads/videos', videoFileName);
 
     fs.stat(videoPath, (err, stats) => {
         if (err || !stats.isFile()) {
